@@ -1,3 +1,4 @@
+" VimPlug
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'mhinz/vim-startify'

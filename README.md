@@ -12,9 +12,9 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/AtsushiNi/dotfiles/maste
 ```
 
 ### Arguments
--s initialize : アプリのインストール
--s deploy : dotfilesの更新とシンボリックリンクの作成
--s initialize deploy : initializeのあとdeploy
+- -s initialize : アプリのインストール
+- -s deploy : dotfilesの更新とシンボリックリンクの作成
+- -s initialize deploy : initializeのあとdeploy
 
 ### Options
 -f : dotfilesを上書きする

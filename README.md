@@ -8,13 +8,13 @@ https://qiita.com/okamos/items/40966158d0271ae7198b#%E8%87%AA%E5%8B%95%E5%8C%96%
 
 ### Command
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AtsushiNi/dotfiles/master/.bin/install.sh)" -s initialize
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/AtsushiNi/dotfiles/master/.bin/install.sh)" -s init
 ```
 
 ### Arguments
-- -s initialize : アプリのインストール
+- -s init : アプリのインストール
 - -s deploy : dotfilesの更新とシンボリックリンクの作成
-- -s initialize deploy : initializeのあとdeploy
+- -s init deploy : initializeのあとdeploy
 
 ### Options
 -f : dotfilesを上書きする

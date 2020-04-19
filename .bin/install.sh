@@ -84,16 +84,17 @@ make_symbolic_links() {
 }
 
 # 引数で場合わけ
-command=$1
-case $command in
-  deploy)
-    make_symbolic_links
-    ;;
-  init)
-    initialize
-    make_symbolic_links
-    ;;
-  *) echo("オプションをつけてください");;
-esac
+for p in $*;do
+  command=$p
+  case $command in
+    deploy)
+      make_symbolic_links
+      ;;
+    init)
+      initialize
+      ;;
+    *) echo("オプションをつけてください");;
+  esac
+done
 
 exit 0

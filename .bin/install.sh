@@ -72,11 +72,12 @@ make_symbolic_links() {
 
   cd ${DOT_DILECTORY}
 
-  for f in .??*
+  for f in *
   do
     # 無視したいファイルを追加
     [[ ${f} = ".git" ]] && continue
     [[ ${f} = ".gitignore" ]] && continue
+    [[ $f = "README.txt" ]] && continue
     ln -snfv ${DOT_DILECTORY}/${f} ${HOME}/${f}
   done
 

@@ -1,5 +1,5 @@
 " VimPlug
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'mhinz/vim-startify'
 
@@ -18,7 +18,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'qpkorr/vim-bufkill'
 
 " Plug 'zxqfl/tabnine-vim', { 'branch': 'master', 'for': ['ruby', 'go'] }
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'szw/vim-tags'
 
 Plug 'bronson/vim-trailing-whitespace'

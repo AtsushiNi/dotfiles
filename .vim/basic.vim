@@ -79,7 +79,6 @@ set gdefault
 
 " set splitright
 set splitbelow
-
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 

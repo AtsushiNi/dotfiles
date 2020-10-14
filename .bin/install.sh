@@ -32,6 +32,7 @@ initialize() {
     curl
     tig
     tmux
+    neovim
     cask
   )
   echo "brew install apps..."

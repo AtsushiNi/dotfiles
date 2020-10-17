@@ -6,6 +6,3 @@ endif
 set background=dark
 
 colorscheme molokai
-
-"ステータスバー
-let g:airline_theme='wombat'

@@ -21,8 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'mhinz/vim-startify'
 
         "ステータスバー
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
+        Plug 'itchyny/lightline.vim'
 
         "ハイライト
         Plug 'sheerun/vim-polyglot'
@@ -59,3 +58,31 @@ let g:startify_change_to_vcs_root = 1
 "NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
+
+"lightline
+let g:lightline = {
+    \ 'colorscheme': 'material',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
+    \   'right': [ [ 'lineinfo' ], [ 'percent' ], [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ] ]
+    \ },
+    \ 'tabline': { 'left': [ [ 'buffers' ] ], 'right': [ [ 'tabs' ] ]
+    \ },
+    \ 'component': {
+    \   'charvaluehex': '0x%B'
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'LightlineFugitive',
+    \   'filename': 'LightlineFilename',
+    \   'fileformat': 'MyFileformat',
+    \   'filetype': 'MyFiletype'
+    \ },
+    \ 'component_expand': {
+    \   'buffers': 'lightline#bufferline#buffers',
+    \ },
+    \ 'component_type': {
+    \   'buffers': 'tabsel',
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': ' ', 'right': ' ' }
+    \ }

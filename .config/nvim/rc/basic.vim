@@ -36,3 +36,42 @@ set hlsearch
 
 "ノーマルモードへの切り替えを早くする
 set ttimeoutlen=50
+
+"bell
+set visualbell t_vb=
+
+"折返し
+set wrap
+set whichwrap=b,s,h,l,<,>,~,[,]
+
+"検索
+set incsearch
+set hlsearch
+set wrapscan
+"検索の大文字小文字
+set ignorecase
+set smartcase
+
+"置換
+set gdefault
+
+"不可視文字
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+
+"補完
+set wildmode=list:longest,full
+set pumheight
+set showmatch
+set matchtime=1
+
+"パフォーマンス
+set ttyfast
+set lazyredraw
+set nobackup
+set nowritebackup
+set backupdir=$HOME/.vim/backup
+set noundofile
+set undodir=$HOME/.vim/backup
+set noswapfile
+

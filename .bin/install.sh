@@ -61,7 +61,7 @@ make_symbolic_links() {
     echo "Downloading dotfiles..."
     rm -rf ${DOT_DILECTORY}
     mkdir ${DOT_DILECTORY}
-    git clone --recursive "${REMOTE_URL}" "${DOT_DILECTORY}"
+    git clone --recursive https://github.com/AtsushiNi/dotfiles
   fi
 
   cd ${DOT_DILECTORY}

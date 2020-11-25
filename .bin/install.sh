@@ -6,13 +6,6 @@ set -ue
 DOT_DILECTORY="${HOME}/dotfiles"
 REMOTE_URL="git@github.com:AtsushiNi/dotfiles.git"
 
-# オプション処理
-while getopts f opt; do
-  case ${opt} in
-    f) OVERWRITE=true;;
-  esac
-done
-
 # アプリのインストール
 initialize() {
   echo "start initialize..."
@@ -85,18 +78,7 @@ make_symbolic_links() {
   echo $(tput setaf 2)Initialize completed!$(tpuut sgr0)
 }
 
-# 引数で場合わけ
-for p in $*;do
-  command=$p
-  case $command in
-    deploy)
-      make_symbolic_links
-      ;;
-    init)
-      initialize
-      ;;
-    *) echo("オプションをつけてください");;
-  esac
-done
+make_symbolic_links
+initialize
 
 exit 0

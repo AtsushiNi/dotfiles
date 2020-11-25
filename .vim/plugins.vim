@@ -51,6 +51,7 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'skanehira/translate.vim'
 
+Plug 'skanehira/getpr.vim'
 call plug#end()
 
 " ==================================================================

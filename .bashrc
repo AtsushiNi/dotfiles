@@ -1,5 +1,8 @@
 export PATH=$PATH:/Users/atsushi/projects/sales/.nodebrew/current/bin
 export PATH="$HOME/.anyenv/bin:$PATH"
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
+export GITHUB_TOKEN="3957e52906c25b73b2b747ed023ed4a832f9f59b"
 source $HOME/.git-prompt.sh
 source $HOME/.git-completion.bash
 

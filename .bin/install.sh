@@ -57,7 +57,7 @@ make_symbolic_links() {
   echo "start deploy..."
 
   # dotfilesがなければダウンロード
-  if [ -n "${OVERWRITE}" -o ! -d ${DOT_DILECTORY} ]; then
+  if [ ! -d ${DOT_DILECTORY} ]; then
     echo "Downloading dotfiles..."
     rm -rf ${DOT_DILECTORY}
     mkdir ${DOT_DILECTORY}

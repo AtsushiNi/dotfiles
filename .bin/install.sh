@@ -24,6 +24,9 @@ initialize() {
     echo $(tput setaf 2)installed $item$(tput sgr0)
   done
 
+  # デフォルトをbashにする
+  chsh -s /bin/bash
+
   # brew cask install(GUI apps)
   cask_items=(
     iterm2

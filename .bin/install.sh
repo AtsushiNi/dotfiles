@@ -80,6 +80,6 @@ if [ which brew >/dev/null 2>&1 ];then
 fi
 
 make_symbolic_links
-#initialize
+initialize
 
 exit 0

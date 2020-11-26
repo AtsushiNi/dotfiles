@@ -21,7 +21,7 @@ initialize() {
   echo $(tput setaf 2)brew install apps...$(tput sgr0)
   for item in "${brew_items[@]}";do
     brew install $item
-    echo $item
+    echo $(tput setaf 2)installed $item$(tput sgr0)
   done
 
   # brew cask install(GUI apps)
@@ -34,7 +34,7 @@ initialize() {
   echo $(tput setaf 2)brew cask install GUI Apps...$(tput sgr0)
   for item in "${cask_items[@]}";do
     brew cask install $item
-    echo $item
+    echo $(tput setaf 2)installed $item$(tput sgr0)
   done
 
   echo "cleanup Homebrew..."

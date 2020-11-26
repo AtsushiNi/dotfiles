@@ -24,9 +24,6 @@ initialize() {
     echo $(tput setaf 2)installed $item$(tput sgr0)
   done
 
-  # デフォルトをbashにする
-  chsh -s /bin/bash
-
   # brew cask install(GUI apps)
   cask_items=(
     iterm2
@@ -75,15 +72,32 @@ make_symbolic_links() {
 }
 
 # Homebrewインストール
-if ! type brew >/dev/null 2>&1 ;then
-  echo $(tput setaf 2)install homebrew...$(tput sgr0)
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+install_homebrew() {
+  if ! type brew >/dev/null 2>&1 ;then
+    echo $(tput setaf 2)install homebrew...$(tput sgr0)
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-  echo "update homebrew..."
-  brew update && brew upgrade
-fi
+    echo "update homebrew..."
+    brew update && brew upgrade
+  fi
+}
 
+# 各種設定
+settings() {
+  # デフォルトをbashにする
+  chsh -s /bin/bash
+
+  # vim
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  vim -c PlugInstall -c q -c q
+}
+
+install_homebrew
 make_symbolic_links
 initialize
+settings
+echo $(tput setaf 2)dotfiles install completed!!!$(tput sgr0)
 
 exit 0

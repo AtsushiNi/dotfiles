@@ -8,13 +8,8 @@ https://qiita.com/okamos/items/40966158d0271ae7198b#%E8%87%AA%E5%8B%95%E5%8C%96%
 
 ### Command
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/AtsushiNi/dotfiles/master/.bin/install.sh)" -s init
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/AtsushiNi/dotfiles/master/.bin/install.sh)"
 ```
 
-### Arguments
-- -s init : アプリのインストール
-- -s deploy : dotfilesの更新とシンボリックリンクの作成
-- -s init deploy : initializeのあとdeploy
-
-### Options
--f : dotfilesを上書きする
+## notice
+- ~/dotfilesが存在すると、そのdotfilesを元に動作します。dotfilesをgithubのものに更新したい場合はフォルダを削除してから実行してください

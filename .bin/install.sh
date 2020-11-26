@@ -72,10 +72,11 @@ make_symbolic_links() {
     [[ ${f} = ".git" ]] && continue
     [[ ${f} = ".gitignore" ]] && continue
     [[ ${f} = ".bin" ]] && continue
+    [[ ${f} = ".DS_Store" ]] && continue
     ln -snfv ${DOT_DILECTORY}/${f} ${HOME}/${f}
   done
 
-  echo $(tput setaf 2)Initialize completed!$(tpuut sgr0)
+  echo $(tput setaf 2)Initialize completed!$(tput sgr0)
 }
 
 make_symbolic_links

@@ -68,6 +68,7 @@ make_symbolic_links() {
 
   for f in *
   do
+    echo $f
     # 無視したいファイルを追加
     [[ ${f} = ".git" ]] && continue
     [[ ${f} = ".gitignore" ]] && continue

@@ -10,15 +10,6 @@ REMOTE_URL="git@github.com:AtsushiNi/dotfiles.git"
 initialize() {
   echo "start initialize..."
 
-  # Homebrewインストール
-  if [ which brew >/dev/null 2>&1 ];then
-    echo "install homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-    echo "update homebrew..."
-    brew update && brew upgrade
-  fi
-
   # brew install
   brew_items=(
     git
@@ -49,7 +40,7 @@ initialize() {
   brew cleanup
   echo $(tput setaf 2)Cleanup Homebrew completed!$(tput sgr0)
 
-  echo $(tput setaf 2)Deplot dotfiles completed!$(tput sgr0)
+  echo $(tput setaf 2)Initialize completed!$(tput sgr0)
 }
 
 # シンボリックリンクの作成(オプションがあればdotfilesの更新も)
@@ -76,8 +67,17 @@ make_symbolic_links() {
     ln -snfv ${DOT_DILECTORY}/${f} ${HOME}/${f}
   done
 
-  echo $(tput setaf 2)Initialize completed!$(tput sgr0)
+  echo $(tput setaf 2)Deploy dotfiles completed!$(tput sgr0)
 }
+
+# Homebrewインストール
+if [ which brew >/dev/null 2>&1 ];then
+  echo "install homebrew..."
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+  echo "update homebrew..."
+  brew update && brew upgrade
+fi
 
 make_symbolic_links
 #initialize

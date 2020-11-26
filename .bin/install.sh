@@ -16,6 +16,7 @@ initialize() {
     tmux
     neovim
     cask
+    bash
   )
   echo $(tput setaf 2)brew install apps...$(tput sgr0)
   for item in "${brew_items[@]}";do
@@ -71,7 +72,7 @@ make_symbolic_links() {
 }
 
 # Homebrewインストール
-if [ which brew >/dev/null 2>&1 ];then
+if ! type brew >/dev/null 2>&1 ;then
   echo $(tput setaf 2)install homebrew...$(tput sgr0)
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 

@@ -30,6 +30,7 @@ initialize() {
     google-chrome
     visual-studio-code
     karabiner-elements
+    slack
   )
   echo $(tput setaf 2)brew cask install GUI Apps...$(tput sgr0)
   for item in "${cask_items[@]}";do
@@ -84,6 +85,11 @@ install_homebrew() {
 
 # 各種設定
 settings() {
+  # OS
+  defaults write -g KeyRepeat -int 2 # キーリピート
+  defaults write -g InitialKeyRepeat -int 12
+  defaults write com.apple.finder ShowPathbar -bool true # finderのパスバーを表示
+
   # デフォルトをbashにする
   chsh -s /bin/bash
 

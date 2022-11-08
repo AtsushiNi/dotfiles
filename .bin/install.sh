@@ -91,7 +91,10 @@ settings() {
   defaults write com.apple.finder ShowPathbar -bool true # finderのパスバーを表示
 
   # デフォルトをbashにする
-  chsh -s /bin/bash
+  # chsh -s /bin/bash
+
+  # zsh
+  curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
   # vim
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

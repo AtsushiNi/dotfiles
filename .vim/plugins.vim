@@ -6,7 +6,7 @@ Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdtree'
 " Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 
-Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'cohama/lexima.vim'

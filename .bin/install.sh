@@ -17,6 +17,8 @@ initialize() {
     neovim
     cask
     bash
+    fzf
+    ripgrep
   )
   echo $(tput setaf 2)brew install apps...$(tput sgr0)
   for item in "${brew_items[@]}";do

@@ -1,0 +1,68 @@
+{
+    // ===================================================================
+    //   Editor
+    // ===================================================================
+    "editor.cursorBlinking": "smooth", // カーソルの点滅をヌルヌルする
+    "editor.autoClosingBrackets": "beforeWhitespace", // 右に文字がないときだけ括弧を補完する
+    "editor.autoClosingQuotes": "beforeWhitespace", // 右に文字がないときだけ補完する
+    "editor.fontSize": 12,
+    "editor.autoIndent": "full",
+
+    // ===================================================================
+    //   Files
+    // ===================================================================
+    "files.autoGuessEncoding": true, // 文字コードを自動で判定
+    "files.autoSave": "onFocusChange", // フォーカスがタブから外れると自動で保存
+    
+    // ===================================================================
+    //   WorkBench
+    // ===================================================================
+    "workbench.startupEditor": "none", // 開いたときにスタートページを表示しない
+    "workbench.editor.enablePreviewFromQuickOpen": false, // プレビューで開かない
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#ff0000",
+        "tab.inactiveForeground": "#CCCCCC",
+        "editorWhitespace.foreground": "#8a8888",
+        "statusBar.background": "#6495ED",
+        "statusBar.noFolderBackground": "#6495ED",
+        "statusBar.debuggingBackground": "#6495ED",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    "workbench.colorTheme": "Default Dark Modern",
+
+    // ===================================================================
+    //   Vim
+    // ===================================================================
+    "vim.useSystemClipboard": true, // OSのクリップボードを使う
+    "vim.hlsearch": true, // 検索結果をハイライト
+    "vim.leader": "<space>",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": "#6495ED", // nomalモードの色
+    "vim.statusBarColors.insert": "#FF8A00", // insertモードの色
+    "vim.autoindent": true,
+    "vim.useCtrlKeys": true, // Ctrlキーを使った操作を有効にする
+    "vim.timeout": 1000, // コマンドのタイムアウト
+    "vim.surround": true, // vim.surround
+    "vim.insertModeKeyBindings": [
+        { "before": ["j", "j"], "after": ["<Esc>"] },
+        { "before": [";", ";"], "commands": ["editor.action.triggerSuggest"] }, // サジェスチョン
+    ],
+    "vim.normalModeKeyBindings": [
+        { "before": ["H"], "after": ["^"] }, // 行頭に移動
+        { "before": ["L"], "after": ["$"] }, // 行末に移動
+        { "before": ["<Leader>", "h"], "after": ["<C-w>", "h"] }, // window移動
+        { "before": ["<Leader>", "j"], "after": ["<C-w>", "j"] }, // window移動
+        { "before": ["<Leader>", "k"], "after": ["<C-w>", "k"] }, // window移動
+        { "before": ["<Leader>", "l"], "after": ["<C-w>", "l"] }, // window移動
+        { "before": ["<Leader>", "q"], "commands": [":qa!"] }, // 全てを閉じる
+        { "before": ["<Leader>", "/"], "commands": [{ "command": "editor.action.commentLine" }] },
+        { "before": ["<Leader>", ":"], "commands": [{ "command": "workbench.action.showCommands" }] }, // コマンドパレット
+        { "before": ["<Leader>", "p"], "commands": [{ "command": "workbench.action.quickOpen" }] }, // ファイル検索
+        { "before": ["u"], "commands": ["undo"] }, // undo
+        { "before": ["<C-r>"], "commands": ["redo"] }, // redo
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": ["<Leader>", "/"], "commands": [{ "command": "editor.action.commentLine" }]}
+    ]
+}
